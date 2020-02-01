@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container text-center mt-5">
+        <div class="input-group">
+            <input class="form-control" type="text" id="todoContent">
+            <div class="input-group-append">
+                <button class="btn btn-success" id="todoButton">Add</button>
+            </div>
+        </div>
+       
+        <ul  class="list-group" id="todoSection">
+
+        </ul>
+
+        
+        
+    </div>
+    <script>
+        let todoSection = document.getElementById('todoSection');
+        let todoButton = document.getElementById('todoButton');
+        let todoContent = document.getElementById('todoContent');
+
+
+        todoButton.addEventListener('click', () => {
+            // action will go here
+            const newTodo = document.createElement('li');
+            
+            newTodo.textContent = todoContent.value;
+            
+
+            todoSection.appendChild(newTodo);
+            todoContent.value = '';
+        })
+    </script>
+</body>
+
+</html>
